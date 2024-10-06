@@ -6,29 +6,30 @@ import { WixMediaImage } from '@app/components/Image/WixMediaImage';
 export function ImageGalleryClient({ items }: { items: products.MediaItem[] }) {
   const { theme } = useTheme();
   const images = items.length ? items : [{ image: { url: PLACEHOLDER_IMAGE } }];
+
   return (
-    <div className="h-56 sm:h-96 max-h-96 max-w-xl mx-auto">
+    <div className="min-h-[400px] h-auto w-full max-w-4xl mx-auto">
       <Flowbite
         theme={{
           theme: {
             carousel: {
               scrollContainer: {
                 ...theme.carousel.scrollContainer,
-                base: theme.carousel.scrollContainer.base + ' rounded-none',
+                base:
+                  theme.carousel.scrollContainer.base + ' rounded-none h-full',
               },
             },
           },
         }}
       >
-        <Carousel slide={false}>
+        <Carousel slide={false} className="h-full">
           {images.map((media, index) => (
-            <WixMediaImage
-              key={index}
-              media={media.image?.url || ''}
-              alt={media.image?.altText ?? ''}
-              width={600}
-              height={400}
-            />
+            <div key={index} className="relative h-full">
+              <img
+                src={media.image?.url}
+                alt={media.image?.altText || 'Lughole shop item'}
+              />
+            </div>
           ))}
         </Carousel>
       </Flowbite>

@@ -184,7 +184,7 @@ export const ProductSidebar: FC<ProductSidebarProps> = ({ product }) => {
           </button>
         </div>
       ) : null}
-      <p
+      <div
         className="pb-4 break-words w-full max-w-xl mt-6"
         dangerouslySetInnerHTML={{ __html: product.description ?? '' }}
       />
@@ -211,7 +211,7 @@ export const ProductSidebar: FC<ProductSidebarProps> = ({ product }) => {
                   <span className="text-sm">{info.title}</span>
                 </Accordion.Title>
                 <Accordion.Content>
-                  <span
+                  <div
                     className="text-sm"
                     dangerouslySetInnerHTML={{ __html: info.description ?? '' }}
                   />

@@ -9,32 +9,31 @@ export const Events = ({ events }: { events: wixEvents.V3Event[] }) => {
   const [expendEventDescription, setExpendEventDescription] = useState(
     {} as Record<string, boolean>
   );
-
   return (
     <div
       className="px-8 sm:px-0 max-w-4xl mx-auto"
       data-testid={testIds.TICKET_LIST.CONTAINER}
     >
-      <h1 className="uppercase text-4xl sm:text-7xl text-center sm:text-left">
-        SHOWS
+      <h1 className="uppercase text-4xl sm:text-5xl text-center sm:text-left">
+        EVENTS{' '}
       </h1>
       <div className="py-10">
         {events!.map((event) => (
           <div
             data-testid={testIds.TICKET_ITEM.CONTAINER}
-            className="group/event flex border-b last:border-0 hover:border-purple-500 gap-4 sm:gap-8 flex-col sm:flex-row py-4 sm:py-0 transition-colors duration-300"
+            className="group/event flex border-b last:border-0 hover:border-red-500 gap-4 sm:gap-8 flex-col sm:flex-row py-4 sm:py-0 transition-colors duration-300"
             key={event._id}
           >
             <div className="flex flex-1 sm:items-center gap-4 sm:gap-4 md:gap-8 flex-col sm:flex-row sm:py-3">
               <div
-                className={`sm:group-hover/event:overflow-hidden transition-all duration-300 ease-out ${
+                className={` transition-all duration-300 ease-out ${
                   expendEventDescription[event._id!]
-                    ? 'w-0 overflow-hidden'
-                    : 'w-full max-w-fit sm:group-hover/event:w-0'
+                    ? 'w-full overflow-hidden'
+                    : 'w-full max-w-fit '
                 }`}
               >
                 <div className="flex flex-col min-w-fit sm:flex-row overflow-hidden sm:gap-4 md:gap-8 relative">
-                  <div className="w-[310px] h-[171px] sm:w-[80px] sm:h-[80px] overflow-hidden sm:group-hover/event:opacity-0 transition-opacity duration-300">
+                  <div className="w-[310px] h-[171px] sm:w-[80px] sm:h-[80px] overflow-hidden transition-opacity duration-300">
                     <WixMediaImage
                       media={event.mainImage}
                       width={300}
@@ -68,7 +67,7 @@ export const Events = ({ events }: { events: wixEvents.V3Event[] }) => {
                   </div>
                 </div>
               </div>
-              <div className="grow flex flex-col hover:text-purple-500">
+              <div className="grow flex flex-col hover:text-red-500">
                 <button
                   className="text-left w-full h-full group/button text-2xl text-left"
                   onClick={(e) => {
@@ -113,7 +112,12 @@ export const Events = ({ events }: { events: wixEvents.V3Event[] }) => {
                       event!.location!.address?.formatted!
                     }
                   </p>
-                  <p className="mt-3">{event.shortDescription}</p>
+                  <div
+                    className="mt-3"
+                    dangerouslySetInnerHTML={{
+                      __html: event?.detailedDescription || '',
+                    }}
+                  />{' '}
                 </div>
               </div>
             </div>

@@ -10,7 +10,7 @@ const nextConfig = {
     dirs: ['app'],
   },
   images: {
-    domains: ['static.wixstatic.com'],
+    domains: ['static.wixstatic.com', 'f4.bcbits.com'],
     formats: ['image/webp'],
   },
 };

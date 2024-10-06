@@ -1,4 +1,4 @@
-import { WixMediaImage } from '@app/components/Image/WixMediaImage';
+import { media as wixMedia } from '@wix/sdk';
 import { formatDate } from '@app/utils/date-formatter';
 import { TicketsTable } from '@app/components/Table/Table.client';
 import { getWixClient } from '@app/hooks/useWixClientServer';
@@ -49,6 +49,16 @@ export default async function EventPage({ params }: any) {
       eventId: [event._id!],
       limit: 100,
     }));
+  console.log(event);
+
+  const imageUrl = wixMedia.getScaledToFillImageUrl(
+    event?.mainImage || '',
+    700,
+    900,
+    {}
+  );
+
+  console.log(imageUrl);
 
   return (
     <div className="mx-auto px-4 sm:px-14">
@@ -58,13 +68,18 @@ export default async function EventPage({ params }: any) {
           data-testid={testIds.TICKET_DETAILS_PAGE.CONTAINER}
         >
           <div className="flex flex-col sm:flex-row gap-4 bg-zinc-900 text-white max-w-6xl sm:max-w-5xl items-lef sm:items-center mx-auto">
-            <div className="basis-1/2">
-              <WixMediaImage
+            <div className="basis-1/2 p-5">
+              <img
+                src={imageUrl}
+                alt={event.shortDescription || 'Lughole gig poster'}
+                className="max-h-[320px] sm:h-[530px] sm:max-h-[530px]"
+              />
+              {/* <WixMediaImage
                 media={event.mainImage}
                 width={530}
                 height={530}
                 className="max-h-[320px] sm:h-[530px] sm:max-h-[530px]"
-              />
+              /> */}
             </div>
             <div className="basis-1/2 text-left px-5 pb-4">
               <span>
@@ -184,7 +199,7 @@ export default async function EventPage({ params }: any) {
                   className="border-2 inline-flex items-center mb-1 mr-1 transition p-1 rounded-full text-white border-neutral-600 bg-neutral-600 hover:bg-neutral-700 hover:border-neutral-700"
                   target="_blank"
                   rel="noopener noreferrer"
-                  href={`https://twitter.com/intent/tweet?text=Check%20out%20this%20event`}
+                  href={`https://twitter.com/intent/tweet?text=Premium%20punk%20coming%20up%20at%20The%20Lughole!:%20https://lughole.org/events/${event.slug}`}
                   aria-label="Share on Twitter"
                 >
                   <svg

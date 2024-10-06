@@ -11,8 +11,8 @@ export function ProductView({ product }: { product: products.Product }) {
           className="full-w overflow-hidden max-w-7xl mx-auto"
           data-testid={testIds.PRODUCT_DETAILS.CONTAINER}
         >
-          <div className="flex flex-col sm:flex-row gap-2">
-            <div className="box-border flex flex-col basis-1/2">
+          <div className="flex flex-col sm:flex-row gap-8">
+            <div className="box-border flex flex-col basis-1/3">
               <div>
                 <ImageGalleryClient items={product.media!.items!} />
               </div>
