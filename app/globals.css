@@ -56,6 +56,24 @@
     @apply hover:bg-gray-400;
   }
 
+  .btn-shop {
+    @apply text-white;
+    @apply text-lg;
+    @apply font-bold;
+    @apply bg-red-500;
+    @apply hover:bg-white;
+    @apply hover:text-black;
+    @apply focus:outline-none;
+    @apply focus:ring-4;
+    @apply focus:ring-gray-300;
+    @apply rounded;
+    @apply px-5;
+    @apply py-1;
+    @apply border-2;
+    @apply border-solid;
+    @apply border-red-500;
+  }
+
   .font-default {
     font-family: 'Poppins-SemiBold', sans-serif;
   }
@@ -111,6 +129,13 @@ a {
 
 * {
   box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+  overflow: hidden;
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -128,4 +153,26 @@ input[type='number'] {
 .header-logo {
   width: 200px;
   height: 200px;
+}
+
+.btn-rev {
+  border-radius: 0.25rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  border-width: 2px;
+  border-style: solid;
+  --tw-border-opacity: 1;
+  border-color: black;
+  --tw-text-opacity: 1;
+  color: black;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+}
+
+.btn-rev:hover {
+  color: black;
+  background-color: white;
 }

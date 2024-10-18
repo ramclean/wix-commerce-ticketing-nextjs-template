@@ -1,10 +1,14 @@
+'use client';
 import Image from 'next/image';
 import { wixEventsV2 as wixEvents } from '@wix/events';
 import { products } from '@wix/stores';
 import { Events } from '@app/components/Events/Events';
 import testIds from '@app/utils/test-ids';
-import { WixMediaImage } from '@app/components/Image/WixMediaImage';
 import Carousel from '@app/components/Carousel/Carousel';
+import ContentWithImage from '../SideBySide/sideBySide';
+import { Accordion, Flowbite } from 'flowbite-react';
+import { HiArrowDown } from 'react-icons/hi';
+import Link from 'next/link';
 
 export function HomeScreen({
   events,
@@ -13,11 +17,6 @@ export function HomeScreen({
   events: wixEvents.V3Event[];
   productsForCategories: { category: string; product: products.Product }[];
 }) {
-  let membership = productsForCategories.filter(
-    (p) => p.category === 'Membership'
-  )[0].product;
-  console.log(membership);
-
   return (
     <div className="mx-auto relative">
       <div className="relative">
@@ -40,7 +39,7 @@ export function HomeScreen({
                 Sheffield, UK.
               </h2>
 
-              <div className="flex gap-4 justify-center sm:justify-start">
+              <div className="flex gap-4 justify-center sm:justify-start lg:flex-row flex-col">
                 <button className="btn-main">What's On?</button>
 
                 <button className="btn-main">Volunteer</button>
@@ -48,7 +47,7 @@ export function HomeScreen({
             </div>
             <div className="bg-zinc-900 h-[75px] w-full"></div>
           </div>
-          <div className="basis-1/3 flex-1 bg-red-500">
+          <div className="basis-1/3 flex-1">
             <Carousel
               images={[
                 '/images/alPhotos/lughole1.jpg',
@@ -62,8 +61,14 @@ export function HomeScreen({
         </div>
       </div>
       {events?.length ? (
-        <div className="bg-zinc-900 text-site pt-16 sm:p-20">
+        <div className="bg-zinc-900 text-site pt-16 sm:p-20" id="events">
           <Events events={events} />
+          <div className=" w-full text-center border border-t border-red-400 p-4">
+            <p>Fancy a trip down memory lane?</p>
+            <Link href={'/past-events'}>
+              <button className="btn-main mt-2">See past events</button>
+            </Link>
+          </div>
         </div>
       ) : (
         <div className="text-3xl w-full text-center p-9 box-border max-w-4xl mx-auto">
@@ -72,105 +77,109 @@ export function HomeScreen({
       )}
       {productsForCategories.length ? (
         <>
-          <div className="flex gap-2 sm:gap-14 px-14 flex-col sm:flex-row">
-            <div className="text-custom-1 text-center sm:text-left pt-10 sm:py-20 basis-1/2">
-              <h1 className="uppercase text-4xl sm:text-7xl text-center sm:text-left text-black">
-                Membership
-              </h1>
-              <p className="text-lg my-5 text-black">
-                The Lughole is a private members club, this means that in order
+          <ContentWithImage
+            title="Membership"
+            description="  The Lughole is a private members club, this means that in order
                 to attend events and purchase alcohol at the bar you need to
                 either be a member or a guest of a member. Being a member allows
                 you to sign in three guests on the night. The membership is
                 annual and will start at sign up point. All memberships take 48
-                hours to come into force.
-              </p>
-              <div className="flex items-center justify-center opacity-80 gap-2">
-                <Image
-                  src={'/images/alPhotos/membershipCard.jpg'}
-                  width={600}
-                  height={600}
-                  alt={membership.media!.mainMedia!.image!.altText!}
-                  className="rounded-lg w-[150px]"
-                />
+                hours to come into force."
+            buttonText="Become a Member"
+            onButtonClick={'/product-page/membership'}
+            mainImage={'/images/alPhotos/members.jpg'}
+            mobileImage={'/images/alPhotos/members.jpg'}
+            smallImages={[
+              '/images/alPhotos/membershipCard.jpg',
+              '/images/alPhotos/membershipCard.jpg',
+              '/images/alPhotos/membershipCard.jpg',
+              '/images/alPhotos/membershipCard.jpg',
+            ]}
+            reverse={false}
+            backgroundColor="bg-site"
+            altText="Membership details"
+            btnClass="main"
+          />
 
-                <Image
-                  src={'/images/alPhotos/membershipCard.jpg'}
-                  width={600}
-                  height={600}
-                  alt={membership.media!.mainMedia!.image!.altText!}
-                  className="rounded-lg w-[150px]"
-                />
-
-                <Image
-                  src={'/images/alPhotos/membershipCard.jpg'}
-                  width={600}
-                  height={600}
-                  alt={membership.media!.mainMedia!.image!.altText!}
-                  className="rounded-lg w-[150px]"
-                />
-
-                <Image
-                  src={'/images/alPhotos/membershipCard.jpg'}
-                  width={600}
-                  height={600}
-                  alt={membership.media!.mainMedia!.image!.altText!}
-                  className="rounded-lg w-[150px]"
-                />
-
-                {/* <a
-                  href="/shop"
-                  className="btn-main rounded-2xl text-base px-8 py-2.5"
-                >
-                  Join Us
-                </a> */}
-              </div>
-            </div>
-
-            <div className="mt-10 basis-1/2">
-              <Image
-                src={'/images/alPhotos/members.jpg'}
-                width={600}
-                height={600}
-                alt={membership.media!.mainMedia!.image!.altText!}
-                className="opacity-90"
-              />
-            </div>
-          </div>
-
-          <div className="flex bg-red-500 text-custom-1 text-center sm:text-left p-10 sm:py-20 mt-10">
-            <div className="basis-1/2">
-              <a
-                href="/shop"
-                className="h-auto w-full max-w-full inline-block opacity-80"
-              >
-                <Image
-                  src={'/images/alPhotos/oldbar.jpg'}
-                  width={500}
-                  height={500}
-                  alt={membership.media!.mainMedia!.image!.altText!}
-                />
-              </a>
-            </div>
-            <div className="basis-1/2">
-              <h1 className="uppercase text-4xl sm:text-7xl text-center sm:text-left text-black">
-                VOLUNTEERING
-              </h1>
-              <div>
-                <p className="text-lg my-10 text-white">
-                  The Lughole is a fully volunteer-led organisation. Everyone
-                  from the directors to the door staff are all Lughole club
-                  members and volunteers. We welcome and are in dire need of
-                  more volunteers to help facilitate events.
-                  <p className="mt-4">
-                    Never pulled a pint before? Not to worry, we offer basic
-                    training and shadowing on all the volunteering roles
-                  </p>
-                </p>
-                click to contact form / copy email adress
-              </div>
-            </div>
-          </div>
+          <ContentWithImage
+            title="Volunteering"
+            description={`The Lughole is a fully volunteer-led organisation. Everyone
+                    from the directors to the door staff are all Lughole club
+                    members and volunteers. We welcome and are in dire need of
+                    more volunteers to help facilitate events.
+                    
+                  Never pulled a pint before? Not to worry, we offer basic
+                      training and shadowing on all the volunteering roles.`}
+            buttonText="Get in touch"
+            onButtonClick={'/contact'}
+            mainImage={'/images/alPhotos/oldbar.jpg'}
+            mobileImage={'/images/alPhotos/oldbar.jpg'}
+            reverse={true}
+            backgroundColor="bg-red-500"
+            altText="Membership details"
+            btnClass="rev"
+          >
+            <Flowbite
+              theme={{
+                theme: {
+                  accordion: {
+                    content: { base: 'bg-transparent p-5' },
+                    title: {
+                      heading: 'text-black',
+                      arrow: {
+                        base: 'text-black',
+                      },
+                    },
+                  },
+                },
+              }}
+            >
+              <Accordion flush={true} arrowIcon={HiArrowDown} collapseAll>
+                <Accordion.Panel>
+                  <Accordion.Title>
+                    <span className="text-sm">Volunteering info</span>
+                  </Accordion.Title>
+                  <Accordion.Content>
+                    <div className="flex flex-col gap-2 text-black">
+                      <strong className="text-md">Door</strong>
+                      <p>
+                        You will volunteer on your own or in pairs (depending on
+                        how busy the event is likely to be) to scan members in,
+                        issue member cards for those ordered online, check pre
+                        order tickets and take payment for tickets on the door
+                        using a card machine and cash. ​ Length of shift – 19:00
+                        – 21:30 (unless it’s a matinee or early start gig)
+                      </p>
+                      <span className="font-bold mt-2">Bar</span>
+                      <p>
+                        You will volunteer as part of a team of 2-4 people.
+                        General bar work such as pouring pints, making basic
+                        drinks, restocking fridges, loading, and unloading the
+                        glasswasher, changing barrels and taking both card and
+                        cash payments. There will be two shifts for this role,
+                        shift 1 will arrive prior to door and carry out the
+                        opening of the bar, shift 2 will close the bar down
+                        after time has been called.
+                      </p>
+                      <span className="font-bold mt-2">Cleaning</span>
+                      <p>
+                        You will volunteer alongside the event promoter. This
+                        will likely take place the day after the event occurs.
+                        General cleaning tasks, brushing, hoovering, mopping,
+                        cleaning of toilets, litter picking and bar cleaning.
+                        Length of shift – approx. 2 hours (times are flexible)
+                      </p>
+                      <span className="font-bold mt-4">Length of shifts</span>
+                      Shift 1 – 19:00 – 22:00 (unless it’s a matinee or early
+                      start gig) <br />
+                      Shift 2 – 22:00 – 01:00 (unless it’s a matinee or early
+                      start gig)
+                    </div>
+                  </Accordion.Content>
+                </Accordion.Panel>
+              </Accordion>
+            </Flowbite>
+          </ContentWithImage>
         </>
       ) : (
         <div className="text-3xl w-full text-center p-9 box-border max-w-4xl mx-auto">

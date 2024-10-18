@@ -18,13 +18,13 @@ export const CartBag = () => {
         setSidebarView('CART_VIEW');
         toggleSidebar();
       }}
-      className="flex relative"
+      className="flex relative "
       aria-label={`Cart items: ${itemsCount}`}
     >
       <svg
         className="w-8 h-8"
         fill="none"
-        stroke="currentColor"
+        stroke="white"
         viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg"
       >
@@ -36,7 +36,7 @@ export const CartBag = () => {
         ></path>
       </svg>
       {itemsCount! > 0 && (
-        <span className="font-bold text-xs  absolute top-[13px] right-[15px]">
+        <span className="font-bold text-xs  absolute top-[13px] right-[15px] text-white">
           {itemsCount}
         </span>
       )}

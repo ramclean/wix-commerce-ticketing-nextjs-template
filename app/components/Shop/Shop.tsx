@@ -10,11 +10,6 @@ export function Shop({ items }: { items: products.Product[] }) {
         data-testid={testIds.SHOP_PAGE.HEADER}
       >
         <h1 className="uppercase text-3xl sm:text-6xl">Merch</h1>
-        <p className="text-sm sm:text-base mx-auto px-8 sm:max-w-[50%] my-10">
-          I’m a paragraph. I’m a great space to write about what makes the
-          products special and explain how customers can benefit from these
-          items.
-        </p>
       </div>
       {items.length ? (
         <div
@@ -45,14 +40,14 @@ export function Shop({ items }: { items: products.Product[] }) {
                   {!item.manageVariants && item.stock?.inStock ? (
                     <a
                       data-testid={testIds.PRODUCT_ITEM.BUY_NOW_CTA}
-                      className="btn-main absolute -mt-10 left-0 cursor-pointer"
+                      className="btn-shop absolute -mt-10 right-0 cursor-pointer"
                       href={`/api/quick-buy/${item._id}?quantity=1`}
                     >
-                      Buy Now
+                      Buy
                     </a>
                   ) : (
                     <button
-                      className="btn-main absolute -mt-10 left-0 cursor-pointer"
+                      className="btn-shop absolute -mt-10 right-0 cursor-pointer"
                       disabled
                     >
                       Out of Stock

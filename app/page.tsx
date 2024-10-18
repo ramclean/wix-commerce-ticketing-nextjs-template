@@ -56,6 +56,9 @@ export default async function Home() {
     });
   } catch (e) {}
   return (
-    <HomeScreen events={events} productsForCategories={productsForCategories} />
+    <HomeScreen
+      events={futureEvents}
+      productsForCategories={productsForCategories}
+    />
   );
 }
