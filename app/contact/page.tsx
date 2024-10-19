@@ -1,7 +1,6 @@
 'use client';
 import Link from 'next/link';
 import Image from 'next/image';
-import { messages } from '@wix/inbox';
 import { useState } from 'react';
 import { FormEvent, ChangeEvent } from 'react';
 
