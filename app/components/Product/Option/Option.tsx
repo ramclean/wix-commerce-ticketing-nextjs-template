@@ -30,15 +30,17 @@ export function Option({
         },
       }}
     >
-      <Dropdown label={selectedOption || 'Select'} inline={true} size="sm">
-        {option.choices!.map(({ value }) => {
-          return (
-            <Dropdown.Item key={value} onClick={() => onSelect(value!)}>
-              {value}
-            </Dropdown.Item>
-          );
-        })}
-      </Dropdown>
+      {option.choices!.map(({ value }) => {
+        return (
+          <button
+            className={selectedOption === value ? 'btn-main' : `btn-rev`}
+            key={value}
+            onClick={() => onSelect(value!)}
+          >
+            {value}
+          </button>
+        );
+      })}
     </Flowbite>
   );
 }

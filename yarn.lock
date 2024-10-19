@@ -1064,6 +1064,56 @@
     kind-of "~5.1.0"
     tslib "^2.7.0"
 
+"@wix/forms_form-spam-submission-reports@1.0.18":
+  version "1.0.18"
+  resolved "https://registry.npmjs.org/@wix/forms_form-spam-submission-reports/-/forms_form-spam-submission-reports-1.0.18.tgz"
+  integrity sha512-4ZV+F0OYnUiCU5CRP6Tsyva1KdmHqNkDCdi1/XpisOpGJrPfWLQPIFuloYSqDPLab0x9vmNASdk/aGiJNF8T8Q==
+  dependencies:
+    "@wix/metro-runtime" "^1.1792.0"
+    "@wix/motion-edm-autogen-query-wrapper" "^1.0.37"
+    "@wix/sdk-runtime" "^0.3.14"
+    "@wix/sdk-types" "^1.12.3"
+
+"@wix/forms_form-submissions@1.0.27":
+  version "1.0.27"
+  resolved "https://registry.npmjs.org/@wix/forms_form-submissions/-/forms_form-submissions-1.0.27.tgz"
+  integrity sha512-gRc30rkBpgZjS+hb55VaiLVAKh2Mh/BZriYnEVPelW5vzBChSXLC6qdceZssuBqwFXQbGf412vcgTCBXJB2INA==
+  dependencies:
+    "@wix/metro-runtime" "^1.1792.0"
+    "@wix/motion-edm-autogen-query-wrapper" "^1.0.37"
+    "@wix/sdk-runtime" "^0.3.14"
+    "@wix/sdk-types" "^1.12.3"
+
+"@wix/forms_forms@1.0.28":
+  version "1.0.28"
+  resolved "https://registry.npmjs.org/@wix/forms_forms/-/forms_forms-1.0.28.tgz"
+  integrity sha512-wJJlHMRKUIed3jyeMv3aVkjYGGtrviWUqgPA3BNZaNjKxAbR2fA160ECJum99cbeE6GKFVPJfReXQn5rFFP4Eg==
+  dependencies:
+    "@wix/metro-runtime" "^1.1792.0"
+    "@wix/motion-edm-autogen-query-wrapper" "^1.0.37"
+    "@wix/sdk-runtime" "^0.3.14"
+    "@wix/sdk-types" "^1.12.3"
+
+"@wix/forms_submissions@1.0.62":
+  version "1.0.62"
+  resolved "https://registry.npmjs.org/@wix/forms_submissions/-/forms_submissions-1.0.62.tgz"
+  integrity sha512-nHEyDgCJXS6fuuIkF69tjIbxZq+Nx5xbaD1egMXw+/8sGRtCArFxbR+UjRSn+qhZ7de/l7cOhKuP5ffFobALTQ==
+  dependencies:
+    "@wix/metro-runtime" "^1.1792.0"
+    "@wix/motion-edm-autogen-query-wrapper" "^1.0.37"
+    "@wix/sdk-runtime" "^0.3.14"
+    "@wix/sdk-types" "^1.12.3"
+
+"@wix/forms@^1.0.151":
+  version "1.0.151"
+  resolved "https://registry.npmjs.org/@wix/forms/-/forms-1.0.151.tgz"
+  integrity sha512-q7+/tMtPgxDhquwHnvR8fWbrXCaDxCV3gF/+41Yil3r2IiKVq8BukSGzREv1QOSMOdQJqecPv03bxmrRrK6yqA==
+  dependencies:
+    "@wix/forms_form-spam-submission-reports" "1.0.18"
+    "@wix/forms_form-submissions" "1.0.27"
+    "@wix/forms_forms" "1.0.28"
+    "@wix/forms_submissions" "1.0.62"
+
 "@wix/identity_authentication@1.0.12":
   version "1.0.12"
   resolved "https://registry.npmjs.org/@wix/identity_authentication/-/identity_authentication-1.0.12.tgz"
@@ -1121,6 +1171,34 @@
   dependencies:
     "@babel/runtime" "^7.25.6"
     tslib "^2.7.0"
+
+"@wix/inbox_conversations@1.0.28":
+  version "1.0.28"
+  resolved "https://registry.npmjs.org/@wix/inbox_conversations/-/inbox_conversations-1.0.28.tgz"
+  integrity sha512-6GrY73tDCeaG6bBe+WcRu2OiPkjK+WPxyGvbtuuDlKBC6yVXCNuw7Vzo+Rmlfm6+/htGjvSGMqMPHFzcLbS4OQ==
+  dependencies:
+    "@wix/metro-runtime" "^1.1792.0"
+    "@wix/motion-edm-autogen-query-wrapper" "^1.0.37"
+    "@wix/sdk-runtime" "^0.3.14"
+    "@wix/sdk-types" "^1.9.2"
+
+"@wix/inbox_messages@1.0.30":
+  version "1.0.30"
+  resolved "https://registry.npmjs.org/@wix/inbox_messages/-/inbox_messages-1.0.30.tgz"
+  integrity sha512-7yFHvD+q0MgSSMvebdv2uomYukEBg0/29YfHVgbghUjxAc2DEYyze1JmXwEMjwR2RfsZ5+hPnTs8Tvkntfs/yg==
+  dependencies:
+    "@wix/metro-runtime" "^1.1792.0"
+    "@wix/motion-edm-autogen-query-wrapper" "^1.0.37"
+    "@wix/sdk-runtime" "^0.3.14"
+    "@wix/sdk-types" "^1.9.2"
+
+"@wix/inbox@^1.0.49":
+  version "1.0.49"
+  resolved "https://registry.npmjs.org/@wix/inbox/-/inbox-1.0.49.tgz"
+  integrity sha512-yr0B0i4UiScXDEj38z8wvgfcO6JX79XSIB1de1uH+6UP/V5LqAVGrnbkGHZ77Gk0xoP054FRR6jyeSJHoCm4rA==
+  dependencies:
+    "@wix/inbox_conversations" "1.0.28"
+    "@wix/inbox_messages" "1.0.30"
 
 "@wix/metro-public-utils@1.0.33":
   version "1.0.33"
@@ -1248,10 +1326,10 @@
     "@wix/sdk-context" "^0.0.1"
     "@wix/sdk-types" "^1.12.1"
 
-"@wix/sdk-types@^1.12.1", "@wix/sdk-types@^1.5.11", "@wix/sdk-types@^1.7.0", "@wix/sdk-types@^1.9.2":
-  version "1.12.1"
-  resolved "https://registry.npmjs.org/@wix/sdk-types/-/sdk-types-1.12.1.tgz"
-  integrity sha512-YloEc20Ka1yEY6wvBBIwUpbeFa/IM96IikHldim3FoYi56by+c3o+8AgwgKPQMh4WYnoIp/m1+XqsC5dNFqhAg==
+"@wix/sdk-types@^1.12.1", "@wix/sdk-types@^1.12.3", "@wix/sdk-types@^1.5.11", "@wix/sdk-types@^1.7.0", "@wix/sdk-types@^1.9.2":
+  version "1.12.3"
+  resolved "https://registry.npmjs.org/@wix/sdk-types/-/sdk-types-1.12.3.tgz"
+  integrity sha512-QF46GbMLSAXwq8bvqf1jG70WXm6/IQ9VGRRwRR2RTXEyWXndiYrGCBR2Ks40JDD3cRcsVhYN+KRxcoS5Bgyy/A==
 
 "@wix/sdk@^1.5.0":
   version "1.13.0"

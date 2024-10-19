@@ -37,11 +37,12 @@ export function Shop({ items }: { items: products.Product[] }) {
                       }
                     />
                   </div>
-                  {!item.manageVariants && item.stock?.inStock ? (
+                  {item.stock?.inventoryStatus === 'IN_STOCK' ||
+                  item.stock?.inventoryStatus === 'PARTIALLY_OUT_OF_STOCK' ? (
                     <a
                       data-testid={testIds.PRODUCT_ITEM.BUY_NOW_CTA}
                       className="btn-shop absolute -mt-10 right-0 cursor-pointer"
-                      href={`/api/quick-buy/${item._id}?quantity=1`}
+                      href={`/product-page/${item.slug}`}
                     >
                       Buy
                     </a>
@@ -67,17 +68,7 @@ export function Shop({ items }: { items: products.Product[] }) {
         </div>
       ) : (
         <div className="text-3xl w-full text-center p-9 box-borderbox-border max-w-4xl mx-auto">
-          No products found. Click{' '}
-          <a
-            href="https://manage.wix.com/account/site-selector?actionUrl=+https%3A%2F%2Fmanage.wix.com%2Fdashboard%2F%7BmetaSiteId%7D%2Fstore%2Fproducts%3FreferralInfo%3DHeadless"
-            target="_blank"
-            rel="noreferrer"
-            className="text-purple-500"
-          >
-            here
-          </a>{' '}
-          to go to the business dashboard to add products. Once added, they will
-          appear here.
+          No products found.
         </div>
       )}
     </div>

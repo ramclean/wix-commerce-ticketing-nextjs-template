@@ -37,7 +37,5 @@ export default async function EventPage() {
     (event) => wixMedia.getImageUrl(event?.mainImage || '').url
   );
 
-  console.log(eventImages);
-
   return <EventGrid eventImages={eventImages} />;
 }

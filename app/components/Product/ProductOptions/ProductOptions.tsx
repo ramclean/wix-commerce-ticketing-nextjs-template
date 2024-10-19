@@ -27,7 +27,10 @@ export const ProductOptions: React.FC<ProductOptionsProps> = ({
       {options.map((opt) => (
         <div className="mb-4" key={opt.name}>
           <span className="text-xs tracking-wide">{opt.name}</span>
-          <div role="listbox" className="flex flex-row gap-2 my-2 relative">
+          <div
+            role="listbox"
+            className="flex flex-row gap-2 my-2 relative flex-wrap"
+          >
             {opt.optionType === 'color' &&
               opt.choices!.map((v, i: number) => {
                 const active = selectedOptions[opt.name!];

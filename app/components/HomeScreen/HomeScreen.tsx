@@ -40,9 +40,13 @@ export function HomeScreen({
               </h2>
 
               <div className="flex gap-4 justify-center sm:justify-start lg:flex-row flex-col">
-                <button className="btn-main">What's On?</button>
+                <Link href={'/#events'}>
+                  <button className="btn-main">What's On?</button>
+                </Link>
 
-                <button className="btn-main">Volunteer</button>
+                <Link href={'/product-page/membership'}>
+                  <button className="btn-main">Membership</button>
+                </Link>
               </div>
             </div>
             <div className="bg-zinc-900 h-[75px] w-full"></div>
@@ -52,8 +56,8 @@ export function HomeScreen({
               images={[
                 '/images/alPhotos/lughole1.jpg',
                 '/images/alPhotos/lughole2.jpg',
-                '/images/alPhotos/lughole3.jpg',
                 '/images/alPhotos/lughole4.jpg',
+                '/images/alPhotos/lughole3.jpg',
                 '/images/alPhotos/lughole6.jpg',
               ]}
             />
@@ -63,7 +67,7 @@ export function HomeScreen({
       {events?.length ? (
         <div className="bg-zinc-900 text-site pt-16 sm:p-20" id="events">
           <Events events={events} />
-          <div className=" w-full text-center border border-t border-red-400 p-4">
+          <div className=" w-full text-center border border-t border-red-400 p-4 my-4">
             <p>Fancy a trip down memory lane?</p>
             <Link href={'/past-events'}>
               <button className="btn-main mt-2">See past events</button>

@@ -2,7 +2,6 @@
 import Image from 'next/image';
 import { StaticImageData } from 'next/image';
 import Link from 'next/link';
-import { URL } from 'url';
 
 export interface ContentWithImageProps {
   /**
@@ -76,7 +75,7 @@ const ContentWithImage: React.FC<ContentWithImageProps> = ({
   children,
 }) => {
   return (
-    <div className={`w-full overflow-hidden ${backgroundColor}`}>
+    <div className={`w-full overflow-hidden my-4 ${backgroundColor}`}>
       {/* Mobile/Tablet only image */}
       {mobileImage && (
         <div className="w-full md:hidden">

@@ -49,7 +49,6 @@ export default async function EventPage({ params }: any) {
       eventId: [event._id!],
       limit: 100,
     }));
-  console.log(event);
 
   const imageUrl = wixMedia.getScaledToFillImageUrl(
     event?.mainImage || '',
@@ -57,8 +56,6 @@ export default async function EventPage({ params }: any) {
     900,
     {}
   );
-
-  console.log(imageUrl);
 
   return (
     <div className="mx-auto px-4 sm:px-14">
