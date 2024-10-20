@@ -40,11 +40,11 @@ export default function ClubRules() {
             tolerated on Lughole Club premises: the use of prohibited
             substances, physical and verbal abuse, harassment, intimidation,
             acts of hate, abusive, aggressive or threatening behaviour of any
-            kind.{' '}
+            kind.
           </p>
           <p>
             The Club reserves the right to ask guests or Club members to leave
-            the premises if they behave contrary to the Club's rules and
+            the premises if they behave contrary to the Club&apos;s rules and
             policies.
           </p>
           <p>
