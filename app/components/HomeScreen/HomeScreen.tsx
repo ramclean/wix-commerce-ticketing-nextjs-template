@@ -41,7 +41,7 @@ export function HomeScreen({
 
               <div className="flex gap-4 justify-center sm:justify-start lg:flex-row flex-col">
                 <Link href={'/#events'}>
-                  <button className="btn-main">What's On?</button>
+                  <button className="btn-main">What&apos;s On?</button>
                 </Link>
 
                 <Link href={'/product-page/membership'}>
