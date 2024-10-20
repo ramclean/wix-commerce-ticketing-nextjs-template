@@ -25,7 +25,7 @@ const Footer = () => (
         <p className="font-default ">© 2024 Lughole</p>
         <p className=" m-0">Web Design & Dev - Envelope Studio</p>
       </div>
-      <a href="/terms">ACCESSIBILITY</a>
+      <a href="/accessibility">ACCESSIBILITY</a>
       <a href="/club-rules">CLUB RULES</a>
     </div>
   </footer>
