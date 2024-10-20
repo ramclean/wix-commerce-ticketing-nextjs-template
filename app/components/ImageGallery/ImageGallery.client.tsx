@@ -8,7 +8,7 @@ export function ImageGalleryClient({ items }: { items: products.MediaItem[] }) {
   const images = items.length ? items : [{ image: { url: PLACEHOLDER_IMAGE } }];
 
   return (
-    <div className="min-h-[400px] h-auto w-full max-w-4xl mx-auto">
+    <div className="lg:min-h-[400px] h-auto w-full max-w-4xl mx-auto">
       <Flowbite
         theme={{
           theme: {

@@ -33,7 +33,11 @@ export function Option({
       {option.choices!.map(({ value }) => {
         return (
           <button
-            className={selectedOption === value ? 'btn-main' : `btn-rev`}
+            className={
+              selectedOption === value
+                ? 'btn-main w-full lg:w-1/2'
+                : `btn-rev w-full lg:w-1/2`
+            }
             key={value}
             onClick={() => onSelect(value!)}
           >

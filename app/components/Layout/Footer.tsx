@@ -21,10 +21,13 @@ const Footer = () => (
       </div>
     </div>
     <div className="mx-auto flex flex-col-reverse items-center sm:flex-row gap-1 sm:gap-16 pt-3 sm:pt-11 pb-4 px-6 sm:px-14 text-12 sm:text-xs">
-      <div className="mb-10 flex-1">
+      <div className="mb-2 flex-1 flex md:flex-col gap-2 md:gap-0">
         <p className="font-default ">© 2024 Lughole</p>
-        <p className=" m-0">Web Design & Dev - Envelope Studio</p>
+        <p className=" m-0 ">
+          Web: <span className="underline">Envelope Studio</span>
+        </p>
       </div>
+      <a href="/coming-soon">TIERED TICKETING</a>
       <a href="/accessibility">ACCESSIBILITY</a>
       <a href="/club-rules">CLUB RULES</a>
     </div>

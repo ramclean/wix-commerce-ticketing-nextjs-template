@@ -5,7 +5,7 @@ import { products } from '@wix/stores';
 
 export function ProductView({ product }: { product: products.Product }) {
   return (
-    <div className="mx-auto px-14 mt-12 animate-fade-in">
+    <div className="mx-auto px-14 mt-8 lg:mt-12 animate-fade-in">
       {product ? (
         <div
           className="full-w overflow-hidden max-w-7xl mx-auto"

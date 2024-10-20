@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import Image from 'next/image';
 
 const EventGrid = ({ eventImages }: { eventImages: string[] }) => {
   const [fullScreenImage, setFullScreenImage] = useState<string | null>(null);
@@ -14,20 +15,26 @@ const EventGrid = ({ eventImages }: { eventImages: string[] }) => {
         <h1 className="text-5xl uppercase animate-fade-in text-center">
           PAST EVENTS
         </h1>
+
+        <p className="text-center mt-4 text-light">
+          Click on a flyer to see it in all its glory!
+        </p>
       </div>
 
-      <div className="flex flex-wrap">
+      <div className="block lg:flex lg:flex-wrap">
         {eventImages.map((image: string, index: number) => (
           <div
             key={index}
             onClick={() => setFullScreenImage(image)} // Trigger full-screen view on click
-            className="relative w-1/6 p-2 cursor-pointer group"
+            className="relative w-full lg:w-1/6 p-2 cursor-pointer group"
           >
             {/* Image */}
-            <img
+            <Image
               src={image}
               alt={'Lughole gig poster'}
               className="w-[600px] h-[300px] object-cover transition duration-300 ease-in-out group-hover:blur-sm"
+              width={600}
+              height={300}
             />
 
             {/* Hover Overlay with 'View' text */}

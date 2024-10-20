@@ -7,7 +7,7 @@ export default function ClubRules() {
       </div>
       <div className="py-10 max-w-4xl mx-auto leading-7">
         <h2 className="text-3xl py-5">MEMBERSHIP</h2>
-        <div className="text-left">
+        <div className="text-left px-8">
           <p>
             Lughole Club membership is open to the general public via
             sponsorship by an existing Lughole Club member.
@@ -34,7 +34,7 @@ export default function ClubRules() {
         </div>
 
         <h2 className="text-3xl py-5 mt-10">CONDUCT</h2>
-        <div className="text-left">
+        <div className="text-left px-8">
           <p>
             The following acts are considered misconduct and will not be
             tolerated on Lughole Club premises: the use of prohibited
@@ -79,7 +79,7 @@ export default function ClubRules() {
         </div>
 
         <h2 className="text-2xl py-5 mt-10">DISPUTES</h2>
-        <div className="text-left">
+        <div className="text-left px-8">
           <p>
             In the event of a dispute between Club members that is not covered
             by these rules, a meeting will be called internally between all
@@ -94,7 +94,7 @@ export default function ClubRules() {
         </div>
 
         <h2 className="text-2xl py-5 mt-10">GUESTS</h2>
-        <div className="text-left">
+        <div className="text-left px-8">
           <p>
             Members of The Lughole Club are permitted to introduce guests to the
             premises at a limit of three guests per event. No Club member can
@@ -128,7 +128,7 @@ export default function ClubRules() {
         </div>
 
         <h2 className="text-2xl py-5 mt-10">STRUCTURE (See image below)</h2>
-        <div className="text-left">
+        <div className="text-left px-8">
           <p>The Lughole’s structure is split into four areas:</p>
           <ul className="list-disc list-inside">
             <li>Club Members: all members of the Lughole Club</li>
@@ -148,7 +148,7 @@ export default function ClubRules() {
         </div>
 
         <h2 className="text-2xl py-5 mt-10">GENERAL MEETINGS</h2>
-        <div className="text-left">
+        <div className="text-left px-8">
           <p>
             An AGM must be held annually within six months of the end of the
             financial year (April). The business of an Annual General Meeting
@@ -187,7 +187,7 @@ export default function ClubRules() {
         </div>
 
         <h2 className="text-2xl py-5 mt-10">PURCHASE OF ALCOHOL</h2>
-        <div className="text-left">
+        <div className="text-left px-8">
           <p>
             The purchase for the Club and the supply by the Club of intoxicating
             liquor shall be at the discretion of the Lughole Collective and
@@ -210,7 +210,7 @@ export default function ClubRules() {
         </div>
 
         <h2 className="text-2xl py-5 mt-10">DRUGS</h2>
-        <div className="text-left">
+        <div className="text-left px-8">
           <p>
             The Lughole Club operates a zero-tolerance policy towards illegal
             drug use. No member or guest shall purchase, use, possess, sell or
@@ -223,7 +223,7 @@ export default function ClubRules() {
         </div>
 
         <h2 className="text-2xl py-5 mt-10">APPLICATIONS OF PROFIT</h2>
-        <div className="text-left">
+        <div className="text-left px-8">
           <p>
             Any profits of the Club shall be applied to the following areas,
             subject to decision by AGM:
@@ -240,7 +240,7 @@ export default function ClubRules() {
         </div>
 
         <h2 className="text-2xl py-5 mt-10">ANIMALS</h2>
-        <div className="text-left">
+        <div className="text-left px-8">
           <p>
             No animals, other than legally recognized and certified Assistance
             Dogs, may be allowed onto Club premises without prior agreement.
@@ -253,7 +253,7 @@ export default function ClubRules() {
         </div>
 
         <h2 className="text-2xl py-5 mt-10">MODIFICATION OF RULES/BYLAWS</h2>
-        <div className="text-left">
+        <div className="text-left px-8">
           <p>
             The Lughole Club in a general meeting, or Board of Directors, may
             from time to time make, adopt and amend such regulations in the form
@@ -268,7 +268,7 @@ export default function ClubRules() {
         </div>
 
         <h2 className="text-2xl py-5 mt-10">DISSOLUTION</h2>
-        <div className="text-left">
+        <div className="text-left px-8">
           <p>The Lughole Club may be dissolved:</p>
           <ul className="list-disc list-inside">
             <li>

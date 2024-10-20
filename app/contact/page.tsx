@@ -115,12 +115,12 @@ export default function ContactPage() {
             <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">
               Give us a shout!
             </h2>
-            <p className="mb-8 font-light text-center text-gray-500 dark:text-gray-400 sm:text-l">
+            <p className="mb-4 lg:mb-8 font-light text-center text-gray-500 dark:text-gray-400 sm:text-l">
               You can reach us on at the following addresses:
             </p>
             <ul className="mb-8 text-center  dark:text-gray-400 sm:text-l">
               <li>
-                <span className="text-gray-500">General:</span>{' '}
+                <span className="text-gray-500">General/Info:</span>{' '}
                 <a href="mailto:lugholesheffield@gmail.com">
                   lugholesheffield@gmail.com
                 </a>

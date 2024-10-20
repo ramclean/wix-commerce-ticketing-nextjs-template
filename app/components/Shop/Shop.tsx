@@ -6,7 +6,7 @@ export function Shop({ items }: { items: products.Product[] }) {
   return (
     <div className="mx-auto">
       <div
-        className="bg-black text-custom-1 text-center py-4 sm:py-10 sm:py-20 h-[450px] sm:h-[520px]"
+        className="bg-black text-custom-1 text-center py-4 sm:py-10 sm:py-20 lg:h-[450px] h-[320px]"
         data-testid={testIds.SHOP_PAGE.HEADER}
       >
         <h1 className="uppercase text-3xl sm:text-6xl">Merch</h1>
@@ -20,7 +20,7 @@ export function Shop({ items }: { items: products.Product[] }) {
             {items.map((item) => (
               <li
                 key={item._id}
-                className="relative"
+                className="relative border border-2 border-red-500"
                 data-testid={testIds.PRODUCT_ITEM.CONTAINER}
               >
                 <a
